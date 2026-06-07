@@ -60,12 +60,12 @@ def render(df_as):
         x=tempo_order, y=vals_tempo,
         marker=dict(color=cores_ord, line=dict(width=0)),
         text=[f"{v:,}" for v in vals_tempo],
-        textposition="outside", textfont=dict(color="#f1f5f9", size=15),
+        textposition="outside", textfont=dict(color="#f1f5f9", size=18),
     ))
     fig_tempo.update_layout(
         plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
-        xaxis=dict(tickfont=dict(color="#cbd5e1"), categoryorder="array", categoryarray=tempo_order),
-        yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b"),
+        xaxis=dict(tickfont=dict(color="#cbd5e1"), categoryorder="array", categoryarray=tempo_order, title_text="Intervalo de Atendimento", title_font=dict(color="#94a3b8")),
+        yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b", title_text="Nº de Casos", title_font=dict(color="#94a3b8")),
         margin=dict(l=10, r=10, t=10, b=10), height=320,
     )
     st.plotly_chart(fig_tempo, width="stretch", key="t10_tempo")
@@ -85,12 +85,12 @@ def render(df_as):
                 x=tempo_order, y=df_obito_t["taxa"].values,
                 marker=dict(color=cores_ord2, line=dict(width=0)),
                 text=[f"{v}%" for v in df_obito_t["taxa"].values],
-                textposition="outside", textfont=dict(color="#f1f5f9", size=15),
+                textposition="outside", textfont=dict(color="#f1f5f9", size=18),
             ))
             fig_taxa.update_layout(
                 plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
-                xaxis=dict(tickfont=dict(color="#cbd5e1"), categoryorder="array", categoryarray=tempo_order),
-                yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b", ticksuffix="%"),
+                xaxis=dict(tickfont=dict(color="#cbd5e1"), categoryorder="array", categoryarray=tempo_order, title_text="Intervalo de Atendimento", title_font=dict(color="#94a3b8")),
+                yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b", ticksuffix="%", title_text="Taxa de Óbito (%)", title_font=dict(color="#94a3b8")),
                 margin=dict(l=10, r=10, t=10, b=10), height=320,
             )
             st.plotly_chart(fig_taxa, width="stretch", key="t10_taxa")
@@ -107,12 +107,12 @@ def render(df_as):
             x=top15["casos"], y=top15["municipio"], orientation="h",
             marker=dict(color="#f87171", line=dict(width=0)),
             text=top15["casos"].apply(lambda x: f"{x:,}"),
-            textposition="outside", textfont=dict(color="#f1f5f9", size=14),
+            textposition="outside", textfont=dict(color="#f1f5f9", size=17),
         ))
         fig_mun.update_layout(
             plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
-            xaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b"),
-            yaxis=dict(tickfont=dict(color="#cbd5e1", size=13)),
+            xaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b", title_text="Nº de Casos", title_font=dict(color="#94a3b8")),
+            yaxis=dict(tickfont=dict(color="#cbd5e1", size=16), title_text="Município", title_font=dict(color="#94a3b8")),
             margin=dict(l=10, r=60, t=10, b=10), height=380,
         )
         st.plotly_chart(fig_mun, width="stretch", key="t10_mun")
@@ -136,8 +136,8 @@ def render(df_as):
             ))
     fig_gt.update_layout(
         barmode="group", plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
-        xaxis=dict(tickfont=dict(color="#cbd5e1"), categoryorder="array", categoryarray=tempo_order),
-        yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b"),
+        xaxis=dict(tickfont=dict(color="#cbd5e1"), categoryorder="array", categoryarray=tempo_order, title_text="Intervalo de Atendimento", title_font=dict(color="#94a3b8")),
+        yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b", title_text="Nº de Casos", title_font=dict(color="#94a3b8")),
         legend=dict(font=dict(color="#cbd5e1"), bgcolor="rgba(0,0,0,0)"),
         margin=dict(l=10, r=10, t=10, b=10), height=320,
     )

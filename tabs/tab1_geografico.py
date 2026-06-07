@@ -90,12 +90,12 @@ def render(df_raw, gdf, anos_sel, tipo_mapa, get_gdf_merged, top10, evolucao_tot
             marker=dict(color=cores[:len(df_top)], line=dict(width=0)),
             text=df_top["total_acidentes"].apply(lambda x: f"{x:,}"),
             textposition="outside",
-            textfont=dict(color="#f1f5f9", size=17)
+            textfont=dict(color="#f1f5f9", size=20)
         ))
         fig.update_layout(
             plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
-            yaxis=dict(categoryorder="total ascending", tickfont=dict(color="#cbd5e1", size=15)),
-            xaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b", showgrid=True),
+            yaxis=dict(categoryorder="total ascending", tickfont=dict(color="#cbd5e1", size=22), title_text="Município", title_font=dict(color="#94a3b8")),
+            xaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b", showgrid=True, title_text="Total de Casos", title_font=dict(color="#94a3b8")),
             margin=dict(l=10, r=60, t=10, b=10), height=460
         )
         st.plotly_chart(fig, width="stretch", key="t1_fig")
@@ -109,13 +109,13 @@ def render(df_raw, gdf, anos_sel, tipo_mapa, get_gdf_merged, top10, evolucao_tot
         line=dict(color="#f97316", width=3),
         marker=dict(size=10, color="#f97316", line=dict(color="#fff", width=2)),
         text=df_evolucao["total_acidentes"].apply(lambda x: f"{x:,}"),
-        textposition="top center", textfont=dict(color="#f1f5f9", size=15),
+        textposition="top center", textfont=dict(color="#f1f5f9", size=18),
         fill="tozeroy", fillcolor="rgba(249,115,22,0.1)"
     ))
     fig2.update_layout(
         plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
-        xaxis=dict(tickfont=dict(color="#cbd5e1"), gridcolor="#1e293b", dtick=1),
-        yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b"),
+        xaxis=dict(tickfont=dict(color="#cbd5e1"), gridcolor="#1e293b", dtick=1, title_text="Ano", title_font=dict(color="#94a3b8")),
+        yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b", title_text="Total de Casos", title_font=dict(color="#94a3b8")),
         margin=dict(l=10, r=10, t=10, b=10), height=280
     )
     st.plotly_chart(fig2, width="stretch", key="t1_fig2")

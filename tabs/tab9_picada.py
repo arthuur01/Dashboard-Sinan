@@ -60,7 +60,7 @@ def render(df_lp):
             marker=dict(colors=["#f97316","#a78bfa","#38bdf8","#4ade80","#94a3b8"],
                         line=dict(color="#0f1117", width=2)),
             texttemplate="%{label}<br>%{value:,} (%{percent})",
-            textfont=dict(color="#f1f5f9", size=15),
+            textfont=dict(color="#f1f5f9", size=18),
         ))
         fig_lp.update_layout(
             showlegend=False,
@@ -84,8 +84,8 @@ def render(df_lp):
             ))
         fig_grau_lp.update_layout(
             barmode="stack", plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
-            xaxis=dict(tickfont=dict(color="#cbd5e1", size=14)),
-            yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b"),
+            xaxis=dict(tickfont=dict(color="#cbd5e1", size=17), title_text="Região do Corpo", title_font=dict(color="#94a3b8")),
+            yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b", title_text="Nº de Casos", title_font=dict(color="#94a3b8")),
             legend=dict(font=dict(color="#cbd5e1"), bgcolor="rgba(0,0,0,0)"),
             margin=dict(l=10, r=10, t=10, b=10), height=360,
         )
@@ -107,8 +107,8 @@ def render(df_lp):
         ))
     fig_anim_lp.update_layout(
         barmode="group", plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
-        xaxis=dict(tickfont=dict(color="#cbd5e1")),
-        yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b"),
+        xaxis=dict(tickfont=dict(color="#cbd5e1"), title_text="Região do Corpo", title_font=dict(color="#94a3b8")),
+        yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b", title_text="Nº de Casos", title_font=dict(color="#94a3b8")),
         legend=dict(font=dict(color="#cbd5e1"), bgcolor="rgba(0,0,0,0)"),
         margin=dict(l=10, r=10, t=10, b=10), height=340,
     )

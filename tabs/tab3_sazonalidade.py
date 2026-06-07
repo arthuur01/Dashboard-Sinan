@@ -50,8 +50,8 @@ def render(df_sazonal):
         ))
     fig_sazon.update_layout(
         plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
-        xaxis=dict(tickfont=dict(color="#cbd5e1"), gridcolor="#1e293b"),
-        yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b"),
+        xaxis=dict(tickfont=dict(color="#cbd5e1"), gridcolor="#1e293b", title_text="Mês", title_font=dict(color="#94a3b8")),
+        yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b", title_text="Nº de Casos", title_font=dict(color="#94a3b8")),
         legend=dict(font=dict(color="#cbd5e1"), bgcolor="rgba(0,0,0,0)"),
         margin=dict(l=10, r=10, t=10, b=10), height=350,
     )
@@ -71,8 +71,9 @@ def render(df_sazonal):
     fig_evo.update_layout(
         barmode="stack", plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
         xaxis=dict(tickvals=anos_uniq, ticktext=[str(a) for a in anos_uniq],
-                   tickfont=dict(color="#cbd5e1"), gridcolor="#1e293b"),
-        yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b"),
+                   tickfont=dict(color="#cbd5e1"), gridcolor="#1e293b",
+                   title_text="Ano", title_font=dict(color="#94a3b8")),
+        yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b", title_text="Nº de Casos", title_font=dict(color="#94a3b8")),
         legend=dict(font=dict(color="#cbd5e1"), bgcolor="rgba(0,0,0,0)"),
         margin=dict(l=10, r=10, t=10, b=10), height=320,
     )
@@ -90,8 +91,8 @@ def render(df_sazonal):
     ))
     fig_hm.update_layout(
         plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
-        xaxis=dict(tickfont=dict(color="#cbd5e1")),
-        yaxis=dict(tickfont=dict(color="#cbd5e1")),
+        xaxis=dict(tickfont=dict(color="#cbd5e1"), title_text="Tipo de Animal", title_font=dict(color="#94a3b8")),
+        yaxis=dict(tickfont=dict(color="#cbd5e1"), title_text="Mês", title_font=dict(color="#94a3b8")),
         margin=dict(l=10, r=10, t=10, b=10), height=360,
     )
     st.plotly_chart(fig_hm, width="stretch", key="t3_hm")

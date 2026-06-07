@@ -54,8 +54,8 @@ def render(df_desfecho):
             ))
         fig_soro.update_layout(
             barmode="stack", plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
-            xaxis=dict(tickfont=dict(color="#e2e8f0")),
-            yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b"),
+            xaxis=dict(tickfont=dict(color="#e2e8f0"), title_text="Uso de Soroterapia", title_font=dict(color="#94a3b8")),
+            yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b", title_text="Nº de Casos", title_font=dict(color="#94a3b8")),
             legend=dict(font=dict(color="#cbd5e1"), bgcolor="rgba(0,0,0,0)"),
             margin=dict(l=10, r=10, t=10, b=10), height=330,
         )
@@ -78,8 +78,9 @@ def render(df_desfecho):
         fig_grau.update_layout(
             barmode="stack", plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
             xaxis=dict(tickfont=dict(color="#e2e8f0"),
-                       categoryorder="array", categoryarray=ORDEM_GRAU),
-            yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b"),
+                       categoryorder="array", categoryarray=ORDEM_GRAU,
+                       title_text="Grau de Acidente", title_font=dict(color="#94a3b8")),
+            yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b", title_text="Nº de Casos", title_font=dict(color="#94a3b8")),
             legend=dict(font=dict(color="#cbd5e1"), bgcolor="rgba(0,0,0,0)"),
             margin=dict(l=10, r=10, t=10, b=10), height=330,
         )
@@ -97,12 +98,12 @@ def render(df_desfecho):
             x=df_mortal_animal["tipo_animal"], y=df_mortal_animal["taxa_mort"],
             marker=dict(color="#f87171", line=dict(width=0)),
             text=[f"{v}%" for v in df_mortal_animal["taxa_mort"]],
-            textposition="outside", textfont=dict(color="#f1f5f9", size=15),
+            textposition="outside", textfont=dict(color="#f1f5f9", size=18),
         ))
         fig_anim.update_layout(
             plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
-            xaxis=dict(tickfont=dict(color="#e2e8f0")),
-            yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b", ticksuffix="%"),
+            xaxis=dict(tickfont=dict(color="#e2e8f0"), title_text="Tipo de Animal", title_font=dict(color="#94a3b8")),
+            yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b", ticksuffix="%", title_text="Taxa de Mortalidade (%)", title_font=dict(color="#94a3b8")),
             margin=dict(l=10, r=10, t=10, b=10), height=300,
         )
         st.plotly_chart(fig_anim, width="stretch", key="t5_anim")

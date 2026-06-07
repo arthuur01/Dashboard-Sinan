@@ -57,12 +57,12 @@ def render(df_desfecho):
             y=[taxa_com_soro, taxa_sem_soro],
             marker=dict(color=["#4ade80", "#f87171"], line=dict(width=0)),
             text=[f"{taxa_com_soro}%", f"{taxa_sem_soro}%"],
-            textposition="outside", textfont=dict(color="#f1f5f9", size=20),
+            textposition="outside", textfont=dict(color="#f1f5f9", size=24),
         ))
         fig_comp.update_layout(
             plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
-            xaxis=dict(tickfont=dict(color="#e2e8f0", size=17)),
-            yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b", ticksuffix="%"),
+            xaxis=dict(tickfont=dict(color="#e2e8f0", size=20), title_text="Uso de Soroterapia", title_font=dict(color="#94a3b8")),
+            yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b", ticksuffix="%", title_text="Taxa de Óbito (%)", title_font=dict(color="#94a3b8")),
             margin=dict(l=10, r=10, t=10, b=10), height=320,
         )
         st.plotly_chart(fig_comp, width="stretch", key="t8_comp")
@@ -85,12 +85,12 @@ def render(df_desfecho):
                 x=list(animais), y=taxas, name=f"Soroterapia: {soro}",
                 marker=dict(color=CORES_SORO[soro], line=dict(width=0)),
                 text=[f"{t}%" for t in taxas],
-                textposition="outside", textfont=dict(color="#f1f5f9", size=14),
+                textposition="outside", textfont=dict(color="#f1f5f9", size=17),
             ))
         fig_anim.update_layout(
             barmode="group", plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
-            xaxis=dict(tickfont=dict(color="#e2e8f0")),
-            yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b", ticksuffix="%"),
+            xaxis=dict(tickfont=dict(color="#e2e8f0"), title_text="Tipo de Animal", title_font=dict(color="#94a3b8")),
+            yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b", ticksuffix="%", title_text="Taxa de Óbito (%)", title_font=dict(color="#94a3b8")),
             legend=dict(font=dict(color="#cbd5e1"), bgcolor="rgba(0,0,0,0)"),
             margin=dict(l=10, r=10, t=10, b=10), height=320,
         )
@@ -113,12 +113,12 @@ def render(df_desfecho):
             x=ORDEM_GRAU8[:3], y=taxas_g, name=f"Soroterapia: {soro}",
             marker=dict(color=CORES_SORO[soro], line=dict(width=0)),
             text=[f"{t}%" for t in taxas_g],
-            textposition="outside", textfont=dict(color="#f1f5f9", size=15),
+            textposition="outside", textfont=dict(color="#f1f5f9", size=18),
         ))
     fig_grau.update_layout(
         barmode="group", plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
-        xaxis=dict(tickfont=dict(color="#e2e8f0")),
-        yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b", ticksuffix="%"),
+        xaxis=dict(tickfont=dict(color="#e2e8f0"), title_text="Grau de Acidente", title_font=dict(color="#94a3b8")),
+        yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b", ticksuffix="%", title_text="Taxa de Óbito (%)", title_font=dict(color="#94a3b8")),
         legend=dict(font=dict(color="#cbd5e1"), bgcolor="rgba(0,0,0,0)"),
         margin=dict(l=10, r=10, t=10, b=10), height=320,
     )
