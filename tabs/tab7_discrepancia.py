@@ -80,8 +80,6 @@ def render(df_disc):
             margin=dict(l=10, r=60, t=10, b=10), height=380,
         )
         st.plotly_chart(fig_dest, width="stretch", key="t7_dest")
-        )
-        st.plotly_chart(fig_dest, width="stretch", key="t7_dest")
 
     st.markdown("---")
     st.markdown("### 🔀 Diagrama de Sankey — Fluxo Origem → Destino (Top 30 fluxos)")
