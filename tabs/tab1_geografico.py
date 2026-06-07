@@ -90,11 +90,11 @@ def render(df_raw, gdf, anos_sel, tipo_mapa, get_gdf_merged, top10, evolucao_tot
             marker=dict(color=cores[:len(df_top)], line=dict(width=0)),
             text=df_top["total_acidentes"].apply(lambda x: f"{x:,}"),
             textposition="outside",
-            textfont=dict(color="#f1f5f9", size=12)
+            textfont=dict(color="#f1f5f9", size=17)
         ))
         fig.update_layout(
             plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
-            yaxis=dict(categoryorder="total ascending", tickfont=dict(color="#cbd5e1", size=11)),
+            yaxis=dict(categoryorder="total ascending", tickfont=dict(color="#cbd5e1", size=15)),
             xaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b", showgrid=True),
             margin=dict(l=10, r=60, t=10, b=10), height=460
         )
@@ -109,7 +109,7 @@ def render(df_raw, gdf, anos_sel, tipo_mapa, get_gdf_merged, top10, evolucao_tot
         line=dict(color="#f97316", width=3),
         marker=dict(size=10, color="#f97316", line=dict(color="#fff", width=2)),
         text=df_evolucao["total_acidentes"].apply(lambda x: f"{x:,}"),
-        textposition="top center", textfont=dict(color="#f1f5f9", size=11),
+        textposition="top center", textfont=dict(color="#f1f5f9", size=15),
         fill="tozeroy", fillcolor="rgba(249,115,22,0.1)"
     ))
     fig2.update_layout(

@@ -50,12 +50,12 @@ def render(df_disc):
             x=top_orig["casos"], y=top_orig["municipio_residencia"], orientation="h",
             marker=dict(color="#38bdf8", line=dict(width=0)),
             text=top_orig["casos"].apply(lambda x: f"{x:,}"),
-            textposition="outside", textfont=dict(color="#f1f5f9", size=11),
+            textposition="outside", textfont=dict(color="#f1f5f9", size=15),
         ))
         fig_orig.update_layout(
             plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
             xaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b"),
-            yaxis=dict(tickfont=dict(color="#cbd5e1", size=10)),
+            yaxis=dict(tickfont=dict(color="#cbd5e1", size=14)),
             margin=dict(l=10, r=60, t=10, b=10), height=380,
         )
         st.plotly_chart(fig_orig, width="stretch", key="t7_orig")
@@ -71,12 +71,12 @@ def render(df_disc):
             x=top_dest["casos"], y=top_dest["municipio_ocorrencia"], orientation="h",
             marker=dict(color="#fb923c", line=dict(width=0)),
             text=top_dest["casos"].apply(lambda x: f"{x:,}"),
-            textposition="outside", textfont=dict(color="#f1f5f9", size=11),
+            textposition="outside", textfont=dict(color="#f1f5f9", size=15),
         ))
         fig_dest.update_layout(
             plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
             xaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b"),
-            yaxis=dict(tickfont=dict(color="#cbd5e1", size=10)),
+            yaxis=dict(tickfont=dict(color="#cbd5e1", size=14)),
             margin=dict(l=10, r=60, t=10, b=10), height=380,
         )
         st.plotly_chart(fig_dest, width="stretch", key="t7_dest")
@@ -105,7 +105,7 @@ def render(df_disc):
         ))
         fig_sk.update_layout(
             plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
-            font=dict(color="#f1f5f9", size=11),
+            font=dict(color="#f1f5f9", size=15),
             margin=dict(l=10, r=10, t=10, b=10), height=600,
         )
         st.plotly_chart(fig_sk, width="stretch", key="t7_sk")

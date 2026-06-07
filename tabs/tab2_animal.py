@@ -49,7 +49,7 @@ def render(df_reg, df_trab_a2, df_serp_trab, df_aran_trab):
         name="Zona Rural", y=df_div["tipo"], x=[-v for v in df_div["rural"]], orientation="h",
         marker=dict(color=[CORES_A2.get(t, "#64748b") for t in df_div["tipo"]], opacity=0.5, line=dict(width=0)),
         text=[f"{v:,}" for v in df_div["rural"]], textposition="inside",
-        textfont=dict(color="#f1f5f9", size=11),
+        textfont=dict(color="#f1f5f9", size=15),
         hovertemplate="<b>%{y}</b><br>Zona Rural: %{customdata[0]:,} casos (%{customdata[1]}%)<extra></extra>",
         customdata=list(zip(df_div["rural"], df_div["pct_rural"])),
     ))
@@ -57,7 +57,7 @@ def render(df_reg, df_trab_a2, df_serp_trab, df_aran_trab):
         name="Zona Urbana", y=df_div["tipo"], x=df_div["urbano"], orientation="h",
         marker=dict(color=[CORES_A2.get(t, "#64748b") for t in df_div["tipo"]], opacity=1.0, line=dict(width=0)),
         text=[f"{v:,}" for v in df_div["urbano"]], textposition="inside",
-        textfont=dict(color="#0d1117", size=11),
+        textfont=dict(color="#0d1117", size=15),
         hovertemplate="<b>%{y}</b><br>Zona Urbana: %{x:,} casos (%{customdata}%)<extra></extra>",
         customdata=(100 - df_div["pct_rural"]).round(1),
     ))
@@ -66,7 +66,7 @@ def render(df_reg, df_trab_a2, df_serp_trab, df_aran_trab):
         barmode="overlay", plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
         xaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b",
                    zerolinecolor="#475569", zerolinewidth=2, tickformat=",d"),
-        yaxis=dict(tickfont=dict(color="#e2e8f0", size=13)),
+        yaxis=dict(tickfont=dict(color="#e2e8f0", size=18)),
         legend=dict(font=dict(color="#cbd5e1"), bgcolor="rgba(0,0,0,0)", orientation="h", y=-0.15),
         margin=dict(l=10, r=20, t=10, b=40), height=360,
     )
@@ -97,12 +97,12 @@ def render(df_reg, df_trab_a2, df_serp_trab, df_aran_trab):
         x=df_trab_sorted["tipo"], y=df_trab_sorted["pct_trabalho"],
         marker=dict(color=[CORES_A2.get(t, "#64748b") for t in df_trab_sorted["tipo"]], line=dict(width=0)),
         text=[f"{v}%" for v in df_trab_sorted["pct_trabalho"]],
-        textposition="outside", textfont=dict(color="#f1f5f9", size=12),
+        textposition="outside", textfont=dict(color="#f1f5f9", size=17),
         hovertemplate="%{customdata}<extra></extra>", customdata=hover_texts,
     ))
     fig_trab.update_layout(
         plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
-        xaxis=dict(tickfont=dict(color="#e2e8f0", size=13)),
+        xaxis=dict(tickfont=dict(color="#e2e8f0", size=18)),
         yaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b",
                    ticksuffix="%", range=[0, df_trab_sorted["pct_trabalho"].max() * 1.25]),
         margin=dict(l=10, r=10, t=10, b=10), height=320,

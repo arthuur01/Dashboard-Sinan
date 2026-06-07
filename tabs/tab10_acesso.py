@@ -60,7 +60,7 @@ def render(df_as):
         x=tempo_order, y=vals_tempo,
         marker=dict(color=cores_ord, line=dict(width=0)),
         text=[f"{v:,}" for v in vals_tempo],
-        textposition="outside", textfont=dict(color="#f1f5f9", size=11),
+        textposition="outside", textfont=dict(color="#f1f5f9", size=15),
     ))
     fig_tempo.update_layout(
         plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
@@ -85,7 +85,7 @@ def render(df_as):
                 x=tempo_order, y=df_obito_t["taxa"].values,
                 marker=dict(color=cores_ord2, line=dict(width=0)),
                 text=[f"{v}%" for v in df_obito_t["taxa"].values],
-                textposition="outside", textfont=dict(color="#f1f5f9", size=11),
+                textposition="outside", textfont=dict(color="#f1f5f9", size=15),
             ))
             fig_taxa.update_layout(
                 plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
@@ -107,12 +107,12 @@ def render(df_as):
             x=top15["casos"], y=top15["municipio"], orientation="h",
             marker=dict(color="#f87171", line=dict(width=0)),
             text=top15["casos"].apply(lambda x: f"{x:,}"),
-            textposition="outside", textfont=dict(color="#f1f5f9", size=10),
+            textposition="outside", textfont=dict(color="#f1f5f9", size=14),
         ))
         fig_mun.update_layout(
             plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
             xaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b"),
-            yaxis=dict(tickfont=dict(color="#cbd5e1", size=9)),
+            yaxis=dict(tickfont=dict(color="#cbd5e1", size=13)),
             margin=dict(l=10, r=60, t=10, b=10), height=380,
         )
         st.plotly_chart(fig_mun, width="stretch", key="t10_mun")

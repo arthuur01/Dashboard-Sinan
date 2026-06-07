@@ -97,7 +97,7 @@ def render(df_desfecho):
             x=df_mortal_animal["tipo_animal"], y=df_mortal_animal["taxa_mort"],
             marker=dict(color="#f87171", line=dict(width=0)),
             text=[f"{v}%" for v in df_mortal_animal["taxa_mort"]],
-            textposition="outside", textfont=dict(color="#f1f5f9", size=11),
+            textposition="outside", textfont=dict(color="#f1f5f9", size=15),
         ))
         fig_anim.update_layout(
             plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",

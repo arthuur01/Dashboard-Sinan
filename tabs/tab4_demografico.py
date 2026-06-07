@@ -47,7 +47,7 @@ def render(df_demog):
             marker=dict(colors=["#38bdf8", "#f472b6"],
                         line=dict(color="#0f1117", width=2)),
             texttemplate="%{label}<br>%{value:,} (%{percent})",
-            textfont=dict(color="#f1f5f9", size=12),
+            textfont=dict(color="#f1f5f9", size=17),
         ))
         fig_sexo.update_layout(
             plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
@@ -64,7 +64,7 @@ def render(df_demog):
             x=df_raca["raca"], y=df_raca["casos"],
             marker=dict(color=[CORES_RACA.get(r, "#64748b") for r in df_raca["raca"]], line=dict(width=0)),
             text=df_raca["casos"].apply(lambda x: f"{x:,}"),
-            textposition="outside", textfont=dict(color="#f1f5f9", size=11),
+            textposition="outside", textfont=dict(color="#f1f5f9", size=15),
         ))
         fig_raca.update_layout(
             plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
@@ -86,20 +86,20 @@ def render(df_demog):
         y=faixas, x=v_masc, orientation="h", name="Masculino",
         marker=dict(color="#38bdf8", line=dict(width=0)),
         text=[f"{abs(v):,}" for v in v_masc], textposition="inside",
-        textfont=dict(color="#0d1117", size=10),
+        textfont=dict(color="#0d1117", size=14),
     ))
     fig_pir.add_trace(go.Bar(
         y=faixas, x=v_fem, orientation="h", name="Feminino",
         marker=dict(color="#f472b6", line=dict(width=0)),
         text=[f"{v:,}" for v in v_fem], textposition="inside",
-        textfont=dict(color="#0d1117", size=10),
+        textfont=dict(color="#0d1117", size=14),
     ))
     fig_pir.update_layout(
         barmode="overlay",
         plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
         xaxis=dict(tickfont=dict(color="#64748b"), gridcolor="#1e293b",
                    tickformat=",d", zerolinecolor="#475569", zerolinewidth=2),
-        yaxis=dict(tickfont=dict(color="#cbd5e1", size=11)),
+        yaxis=dict(tickfont=dict(color="#cbd5e1", size=15)),
         legend=dict(font=dict(color="#cbd5e1"), bgcolor="rgba(0,0,0,0)", orientation="h", y=-0.12),
         margin=dict(l=10, r=10, t=10, b=40), height=420,
     )

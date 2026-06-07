@@ -84,7 +84,7 @@ def render(df_tg):
             x=tempo_order, y=df_obito_tempo["taxa"].values,
             marker=dict(color=cores_barras, line=dict(width=0)),
             text=[f"{v}%" for v in df_obito_tempo["taxa"].values],
-            textposition="outside", textfont=dict(color="#f1f5f9", size=11),
+            textposition="outside", textfont=dict(color="#f1f5f9", size=15),
         ))
         fig_taxa.update_layout(
             plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
