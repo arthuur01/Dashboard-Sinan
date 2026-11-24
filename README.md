@@ -1,3 +1,10 @@
+ Dashboard Epidemiológico — Acidentes com Animais Peçonhentos (SINAN / MG)
+🔗 **Aplicação ao vivo:** [animaispeconhetosunaaimores.streamlit.app](https://animaispeconhetosunaaimores.streamlit.app/)
+> **Dica:** Adicione um print do mapa/gráfico principal em `docs/preview.png` e descomente a linha abaixo:
+> `<!-- ![Preview do Dashboard SINAN](./docs/preview.png) -->`
+---
+## 🎯 Problema Resolvido
+Os registros públicos de notificações epidemiológicas do **SINAN** (Sistema de Informação de Agravos de Notificação) contêm grandes volumes de dados brutos que dificultam a identificação rápida de padrões regionais e sazonais por gestores de saúde e pesquisadores.
 Este projeto transforma os dados de acidentes com animais peçonhentos em **Minas Gerais** em um **dashboard analítico interativo multiabas**, permitindo investigar em segundos:
 - **Distribuição geográfica** dos casos por município/região (mapas interativos com shapefiles de MG)
 - **Sazonalidade** e tendências ao longo do tempo
