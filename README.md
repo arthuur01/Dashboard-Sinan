@@ -1,6 +1,6 @@
  Dashboard Epidemiológico — Acidentes com Animais Peçonhentos (SINAN / MG)
 🔗 **Aplicação ao vivo:** [animaispeconhetosunaaimores.streamlit.app](https://animaispeconhetosunaaimores.streamlit.app/)
-> <!-- ![Preview do Dashboard SINAN](/preview.png) -->
+>  ![Preview do Dashboard SINAN](preview.png) 
 ---
 ## 🎯 Problema Resolvido
 Os registros públicos de notificações epidemiológicas do **SINAN** (Sistema de Informação de Agravos de Notificação) contêm grandes volumes de dados brutos que dificultam a identificação rápida de padrões regionais e sazonais por gestores de saúde e pesquisadores.
